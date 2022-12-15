@@ -1,14 +1,15 @@
 {
-  "name": "vue3-contributes",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue3-ctb",
+  "version": "0.1.2",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "package": "vue-cli-service build --target lib ./src/package/index.ts --name contributes --dest dist"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue3-ctb": "^0.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
@@ -16,5 +17,13 @@
     "@vue/cli-service": "~4.5.15",
     "@vue/compiler-sfc": "^3.0.0",
     "typescript": "~4.1.5"
-  }
+  },
+  "description": "基于vue3的类似github贡献图组件",
+  "main": "babel.config.js",
+  "keywords": [
+    "contributes",
+    "贡献图"
+  ],
+  "author": "",
+  "license": "ISC"
 }
