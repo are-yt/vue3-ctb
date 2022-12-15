@@ -1,6 +1,8 @@
-#### 效果图如下
+---
+typora-copy-images-to: ./
+---
 
-![效果图](C:\Users\codercy\Desktop\contribute.PNG)
+![contribute](C:\Users\codercy\Desktop\vue3-contributes\contribute.PNG)
 
 #### 1. 安装
 
