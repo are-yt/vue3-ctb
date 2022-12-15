@@ -6,6 +6,9 @@
 
 <script setup lang="ts">
 import Contributes from './package/contributes.vue'
+const config = {
+  showFooter: false
+}
 </script>
 
 <style scoped></style>

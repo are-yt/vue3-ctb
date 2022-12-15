@@ -1,19 +1,68 @@
-# vue3-contributes
+#### 效果图如下
 
-## Project setup
-```
-npm install
-```
+![效果图](C:\Users\codercy\Desktop\contribute.PNG)
 
-### Compiles and hot-reloads for development
+#### 1. 安装
+
 ```
-npm run serve
+npm i vue3-ctb --save
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+#### 2. 在项目中引入
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+// *引入组件
+// 在ts项目中引入时会报错，在项目根目录下的.d.ts文件中加入---> declare module 'vue3-ctb'
+import Ctb from 'vue3-ctb'
+// *引入组件样式
+import 'vue3-ctb/contributes.css'
+const app = createApp(App)
+app.use(Ctb)
+app.mount('#app')
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### 3. 使用
+
+```vue
+<template>
+	<!-- 已在第2步骤中全局注册了，直接使用 -->
+	<Contributes v-bind="config" :data="list" />
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+const config = {
+  showFooter: false,
+  level1Color: '#90d7ec40',
+  level2Color: '#90d7ec60',
+  level3Color: '#90d7ec',
+  size: '15px'
+}
+const list = ref([
+  {
+    date: '2022-12-01',
+    count: 3
+  },
+  {
+    date: '2022-12-02',
+    count: 5
+  },
+  {
+    date: '2022-12-03',
+    count: 6
+  }
+])
+</script>
+```
+
+#### 其他属性
+
+| 属性                | 说明                             | 默认值 |
+| ------------------- | -------------------------------- | ------ |
+| showFooter          | 贡献图底部包括数据统计、等级说明 | true   |
+| level{1\|2\|3}Color | 等级颜色                         |        |
+| size                | 格子大小                         | 15px   |
+
+联系：2821458718@qq.com
