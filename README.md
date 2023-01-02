@@ -1,5 +1,5 @@
 ---
-typora-copy-images-to: ./
+
 ---
 
 ![contribute](C:\Users\codercy\Desktop\vue3-contributes\contribute.PNG)

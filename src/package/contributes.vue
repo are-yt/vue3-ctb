@@ -235,9 +235,9 @@ if (is31dayCountOfMonth.includes(lastYearTodayMonth)) {
 let startMonth = lastYearTodayMonth + 1
 while (startMonth <= 12) {
   if (is31dayCountOfMonth.includes(startMonth)) {
-    handleDayCountOfAnothorMonth(31, 1, lastYearTodayMonth, lastFullYear)
+    handleDayCountOfAnothorMonth(31, 1, startMonth, lastFullYear)
   } else if (is30dayCountOfMonth.includes(startMonth)) {
-    handleDayCountOfAnothorMonth(30, 1, lastYearTodayMonth, lastFullYear)
+    handleDayCountOfAnothorMonth(30, 1, startMonth, lastFullYear)
   } else if (startMonth === 2) {
     const dayCount = computedFebDayCount(lastFullYear)
     handleFebDayCount(dayCount, 1, lastFullYear)
