@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Contributes :data="[{ date: '2022-12-12', count: 2 }]" />
+    <Contributes :data="[{ date: '2022-12-12', count: 2 }, { date: '2022-12-13', count: 5 }, { date: '2022-12-14', count: 10 }]" />
   </div>
 </template>
 
