@@ -2,7 +2,7 @@
 
 ---
 
-![contribute](C:\Users\codercy\Desktop\vue3-contributes\contribute.PNG)
+![contribute](https://img-blog.csdnimg.cn/fa88b7169bf5425aa29910820c31a31d.png)
 
 #### 1. 安装
 
@@ -34,15 +34,15 @@ app.mount('#app')
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 const config = {
   showFooter: false,
   level1Color: '#90d7ec40',
   level2Color: '#90d7ec60',
   level3Color: '#90d7ec',
-  size: '15px'
+  size: '15px',
+  tipActionName: '提交'
 }
-const list = ref([
+const list = [
   {
     date: '2022-12-01',
     count: 3
@@ -55,7 +55,7 @@ const list = ref([
     date: '2022-12-03',
     count: 6
   }
-])
+]
 </script>
 ```
 
@@ -64,7 +64,6 @@ const list = ref([
 | 属性                | 说明                             | 默认值 |
 | ------------------- | -------------------------------- | ------ |
 | showFooter          | 贡献图底部包括数据统计、等级说明 | true   |
-| level{1\|2\|3}Color | 等级颜色                         |        |
+| level(1\|2\|3)Color | 等级颜色                         |        |
 | size                | 格子大小                         | 15px   |
-
-联系：2821458718@qq.com
+| tipActionName       | 行为名称                         | '提交' |
