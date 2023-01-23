@@ -34,7 +34,9 @@
                 <div
                   v-if="compareDate(item)"
                   :class="['item', computedLevel(item)]"
-                  :title="`${item}\r${props.tipActionName}了${getContributeCount(item)}次`"
+                  :title="`${item}\r${
+                    props.tipActionName
+                  }了${getContributeCount(item)}次`"
                 ></div>
                 <div v-else class="item" :title="item"></div>
               </template>
@@ -46,7 +48,9 @@
                   <div
                     v-if="compareDate(item)"
                     :class="['item', computedLevel(item)]"
-                    :title="`${item}\r${props.tipActionName}了${getContributeCount(item)}次`"
+                    :title="`${item}\r${
+                      props.tipActionName
+                    }了${getContributeCount(item)}次`"
                   ></div>
                   <div v-else class="item" :title="item"></div>
                 </template>
@@ -57,7 +61,9 @@
               <div
                 v-if="compareDate(item)"
                 :class="['item', computedLevel(item)]"
-                :title="`${item}\r${props.tipActionName}了${getContributeCount(item)}次`"
+                :title="`${item}\r${props.tipActionName}了${getContributeCount(
+                  item
+                )}次`"
               ></div>
               <div v-else class="item" :title="item"></div>
             </template>
@@ -69,7 +75,9 @@
       <div class="statistics">
         <span>最近一年{{ props.tipActionName }}: {{ con_total }}次</span>
         <span>最长连续{{ props.tipActionName }}: {{ con_max_series() }}天</span>
-        <span>最近连续{{ props.tipActionName }}: {{ con_near_series() }}天</span>
+        <span
+          >最近连续{{ props.tipActionName }}: {{ con_near_series() }}天</span
+        >
       </div>
       <div class="right">
         <span>少</span>
@@ -98,7 +106,7 @@ const props = withDefaults(
     level3Color?: string;
     size?: string;
     data?: any;
-    tipActionName?: string
+    tipActionName?: string;
   }>(),
   {
     showFooter: true,
@@ -107,7 +115,7 @@ const props = withDefaults(
     level3Color: "#90d7ec",
     size: "15px",
     data: [],
-    tipActionName: '提交'
+    tipActionName: "提交",
   }
 );
 // 为什么这么做，因为后续对contributes的操作很多，如果都使用props.的操作很麻烦
@@ -155,10 +163,10 @@ const con_max_series = () => {
   const arr = [];
   let count = 0;
   for (let i = 0; i < contribute.value.length; i++) {
-    const date = new Date(contribute.value[i].date);
+    const date: any = new Date(contribute.value[i].date);
     if (i !== contribute.value.length - 1) {
-      const date2 = new Date(contribute.value[i + 1].date);
-      if (date2.getDate() - date.getDate() === 1) {
+      const date2: any = new Date(contribute.value[i + 1].date);
+      if ((date2 - date) / (1000 * 60 * 60 * 24) === 1) {
         count += 1;
       } else {
         count = 0;
@@ -176,10 +184,10 @@ const con_max_series = () => {
 const con_near_series = () => {
   let count = 0;
   for (let i = contribute.value.length - 1; i >= 0; i--) {
-    const date = new Date(contribute.value[i].date);
+    const date: any = new Date(contribute.value[i].date);
     if (i !== 0) {
-      const date2 = new Date(contribute.value[i - 1].date);
-      if (date.getDate() - date2.getDate() === 1) {
+      const date2: any = new Date(contribute.value[i - 1].date);
+      if ((date2 - date) / (1000 * 60 * 60 * 24) === 1) {
         count++;
       } else {
         if (count) {
